@@ -1,0 +1,109 @@
+﻿@model Core.Models.Client
+
+@{
+    ViewBag.Title = "Login";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Highway Single Post</title>
+    <!--
+
+    Highway Template
+
+    https://templatemo.com/tm-520-highway
+
+    -->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/fontAwesome.css">
+    <link rel="stylesheet" href="/css/light-box.css">
+    <link rel="stylesheet" href="/css/templatemo-style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <script src="/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body style="">
+
+    <nav>
+        <div class="logo">
+            <a href="index.html">Gala<em>xy</em></a>
+        </div>
+        <div class="menu-icon">
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="page-heading">
+        <div class="container">
+            <div class="heading-content">
+                <h1>Log in</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="blog-entries" style="height: 600px;">
+        <div class="container">
+            <div class="col-md-9">
+                <div class="blog-posts">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="single-blog-post">
+
+                                <div style="color:aliceblue;">
+
+                                    <div>
+                                        E-mail
+                                        <div style="color: black;">
+                                            @Html.EditorFor(model => model.Email)
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        Password
+                                        <div style="color: black;">
+                                            @Html.EditorFor(model => model.Password)
+                                        </div>
+                                    </div>
+
+                                    <div style="padding-top: 10px;">
+                                        <div>
+                                            <input style="color: aliceblue; background-color: black;" type="submit" value="Ok" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<footer>
+	    @await Html.PartialAsync("_Footer")
+    </footer>
+
+	<section class="overlay-menu">
+	    @await Html.PartialAsync("_Menu")
+    </section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="/js/vendor/bootstrap.min.js"></script>
+
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
+
+</body>
+</html>
