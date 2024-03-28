@@ -3,7 +3,7 @@
 using Microsoft.AspNetCore.Identity;
 
 
-namespace DAL
+namespace Core.Models
 {
     public class AppUser : IdentityUser<Guid>
     {
