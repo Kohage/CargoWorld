@@ -1,11 +1,13 @@
-﻿using DAL;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-namespace Core.Models;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-public class UserSettings : BaseModel, IOwnByUser
+namespace Core.Models
 {
-    public bool IsNeedToDrawHeatMap { get; set; }
-    public double RadiusOfObjectWithMaxCapacityInKilometers { get; set; } = 300;
-    public Guid AppUserId { get; set; }
-    public virtual AppUser AppUser { get; set; }
+
+    public class UserSettings : BaseModel, IOwnByUser
+    {
+        public bool IsNeedToDrawHeatMap { get; set; }
+        public double RadiusOfObjectWithMaxCapacityInKilometers { get; set; } = 300;
+        public Guid AppUserId { get; set; }
+        public virtual AppUser AppUser { get; set; }
+    }
 }

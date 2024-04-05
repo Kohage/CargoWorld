@@ -1,4 +1,4 @@
-﻿@model Core.Models.Client
+﻿@model Core.Models.RegisterModel
 
 @{
     ViewBag.Title = "Register";
@@ -51,7 +51,7 @@
     </div>
 
 <form method="post" asp-controller="Home" asp-action="Register">
-    <div class="blog-entries" style="height: 600px;">
+    <div class="blog-entries" style="height: 650px;">
         <div class="container">
             <div class="col-md-9">
                 <div class="blog-posts">
@@ -64,32 +64,18 @@
                                     <div>
                                         Name
                                         <div style="color: black;">
-                                            @Html.EditorFor(model => model.Name)
+                                            @Html.EditorFor(model => model.FirstName)
                                         </div>
                                     </div>
 
                                     <div>
                                         Surname
                                         <div style="color: black;">
-                                            @Html.EditorFor(model => model.Surname)
+                                            @Html.EditorFor(model => model.SecondName)
                                         </div>
                                     </div>
 
-                                    <div>
-                                        Adress
-                                        <div style="color: black;">
-                                            @Html.EditorFor(model => model.Adress)
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        Number
-                                        <div style="color: black;">
-                                            @Html.EditorFor(model => model.Number)
-                                        </div>
-                                    </div>
- 
-                                    <div>
+	                                <div>
                                         E-mail
                                         <div style="color: black;">
                                             @Html.EditorFor(model => model.Email)
@@ -106,7 +92,7 @@
                                     <div>
                                         Confirm Password
                                         <div style="color: black;">
-                                            @Html.EditorFor(model => model.ConfirmPassword)
+                                            @Html.EditorFor(model => model.Password)
                                         </div>
                                     </div>
  

@@ -17,11 +17,11 @@ namespace Service.Services
         }
         public IEnumerable<Transport> GetAllTransport()
         {
-            return _TransportRepo.GetAll();
+            return  _TransportRepo.GetAll();
         }
-        public Transport GetTransport(int id)
+        public async Task<Transport> GetTransport(Guid id)
         {
-            return _TransportRepo.GetById(id);
+            return await _TransportRepo.GetById(id);
         }
     }
 }

@@ -8,11 +8,8 @@ using System.Threading.Tasks;
 
 namespace Core.Models
 {
-    public class Transport
+    public class Transport : BaseModel
     {
-        [Required]
-        [Key]
-        public int Transport_Id { get; set; }
         [Required(ErrorMessage = "Поле обязательно")]
         public string Type { get; set; }
         [Required(ErrorMessage = "Поле обязательно")]

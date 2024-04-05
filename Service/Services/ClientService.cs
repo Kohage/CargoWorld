@@ -11,22 +11,22 @@ namespace Service.Services
 {
     public class ClientService : IClientService
     {
-        private readonly IRepo<Client> _ClientRepo = null!;
-        public ClientService(IRepo<Client> repo)
+        private readonly IRepo<AppUser> _ClientRepo = null!;
+        public ClientService(IRepo<AppUser> repo)
         {
             _ClientRepo = repo;
         }
-        public async Task<Client> SaveClientAsync(Client clientModel)
+        public async Task<AppUser> SaveClientAsync(AppUser clientModel)
         {
             return await _ClientRepo.SaveAsync(clientModel);
         }
-        public IEnumerable<Client> GetAllClient()
+        public IEnumerable<AppUser> GetAllClient()
         {
-            return _ClientRepo.GetAll();
+            return  _ClientRepo.GetAll();
         }
-        public Client GetClient(int id)
+        public async Task<AppUser> GetClient(Guid id)
         {
-            return _ClientRepo.GetById(id);
+            return await _ClientRepo.GetById(id);
         }
     }
 }

@@ -19,9 +19,9 @@ namespace Service.Services
         {
             return _CargoRepo.GetAll();
         }
-        public Cargo GetCargo(int id)
+        public async Task<Cargo> GetCargo(Guid id)
         {
-            return _CargoRepo.GetById(id);
+            return await _CargoRepo.GetById(id);
         }
     }
 }

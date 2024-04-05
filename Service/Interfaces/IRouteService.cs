@@ -11,6 +11,6 @@ namespace Service.Interfaces
     {
         Task<Route> SaveRouteAsync(Route routeModel);
         IEnumerable<Route> GetAllRoute();
-        Route GetRoute(int id);
+        Task<Route> GetRoute(Guid id);
     }
 }

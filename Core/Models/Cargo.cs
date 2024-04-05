@@ -8,17 +8,14 @@ using System.Threading.Tasks;
 
 namespace Core.Models
 {
-    public class Cargo
+    public class Cargo : BaseModel
     {
-        [Required]
-        [Key]
-        public int Cargo_Id { get; set; }
         public string Description { get; set; }
         [Required(ErrorMessage = "Поле обязательно")]
         public double Weight { get; set; }
         [Required(ErrorMessage = "Поле обязательно")]
         public double Volume { get; set; }
         public byte[] Image { get; set; }
-        public int Client_Id { get; set; }
+        public Guid Client_Id { get; set; }
     }
 }

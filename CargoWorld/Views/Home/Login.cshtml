@@ -1,5 +1,4 @@
-﻿@model Core.Models.Client
-
+﻿@model Core.Models.LoginModel
 @{
     ViewBag.Title = "Login";
 }
@@ -50,8 +49,8 @@
         </div>
     </div>
 
-
-    <div class="blog-entries" style="height: 600px;">
+    <form method="post" asp-controller="Home" asp-action="Register">
+    <div class="blog-entries" style="height: 650px;">
         <div class="container">
             <div class="col-md-9">
                 <div class="blog-posts">
@@ -64,7 +63,7 @@
                                     <div>
                                         E-mail
                                         <div style="color: black;">
-                                            @Html.EditorFor(model => model.Email)
+                                            @Html.EditorFor(model => model.Username)
                                         </div>
                                     </div>
 
@@ -88,7 +87,7 @@
             </div>
         </div>
     </div>
-
+</form>
 	<footer>
 	    @await Html.PartialAsync("_Footer")
     </footer>
@@ -103,7 +102,7 @@
     <script src="/js/vendor/bootstrap.min.js"></script>
 
     <script src="/js/plugins.js"></script>
-    <script src="/js/main.js"></script>
+<script src="/js/main.js"></script>
 
 </body>
 </html>

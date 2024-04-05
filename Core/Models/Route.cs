@@ -8,15 +8,12 @@ using System.Threading.Tasks;
 
 namespace Core.Models
 {
-    public class Route
+    public class Route : BaseModel
     {
-        [Required]
-        [Key]
-        public int Route_Id { get; set; }
         [Required(ErrorMessage = "Поле обязательно")]
         public string Start {  get; set; }
         [Required(ErrorMessage = "Поле обязательно")]
         public string End { get; set; }
-        public int Transport_Id { get; set; }
+        public Guid Transport_Id { get; set; }
     }
 }

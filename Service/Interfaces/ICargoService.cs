@@ -11,6 +11,8 @@ namespace Service.Interfaces
     {
         Task<Cargo> SaveCargoAsync(Cargo cargoModel);
         IEnumerable<Cargo> GetAllCargo();
-        Cargo GetCargo(int id);
+        Task<Cargo> GetCargo(Guid id);
+
+
     }
 }

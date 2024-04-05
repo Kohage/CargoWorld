@@ -12,6 +12,6 @@ namespace Data.Repo
 
         Task<T> SaveAsync(T entity);
         IEnumerable<T> GetAll();
-        T GetById(int id);
+        Task<T> GetById(Guid id);
     }
 }

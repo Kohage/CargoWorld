@@ -25,9 +25,6 @@ namespace Core.Models
         [Display(AutoGenerateField = false)]
         public Guid UserSettingsId { get; set; }
 
-        [Display(AutoGenerateField = false)]
-        public virtual UserSettings UserSettings { get; set; } = new();
-
         public override string ToString()
         {
             return UserName;

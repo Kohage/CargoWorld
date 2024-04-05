@@ -1,6 +1,134 @@
-﻿@*
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Microsoft.AspNetCore.Razor.Language.Intermediate
+@using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata
+@model IEnumerable<Core.Models.Cargo>
+
 @{
+    ViewBag.Title = "Login";
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Highway Single Post</title>
+    <!--
+
+    Highway Template
+
+    https://templatemo.com/tm-520-highway
+
+    -->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/fontAwesome.css">
+    <link rel="stylesheet" href="/css/light-box.css">
+    <link rel="stylesheet" href="/css/templatemo-style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <script src="/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body style="">
+
+    <nav>
+        <div class="logo">
+            <a href="index.html">Gala<em>xy</em></a>
+        </div>
+        <div class="menu-icon">
+            <span></span>
+        </div>
+    </nav>
+
+<div class="page-heading">
+	<div class="container">
+		<div class="heading-content">
+			<h1>Your Cargoes</h1>
+		</div>
+	</div>
+
+</div>
+<div class="blog-entries" style="height: 650px;">
+	@using (Html.BeginForm())
+	{
+		<p>
+			Find by name: @Html.TextBox("SearchString")
+			<input type="submit" value="Search" id="SearchSubmit"/>
+		</p>
+	}
+	<div class="row">
+
+		<div class="form-group">
+			<div class="col-md-offset-10 col-md-10">
+				@Html.ActionLink("Create", "Create")
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-offset-10 col-md-10">
+				@Html.ActionLink("Export To Word", "ExportToWord")
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-offset-1 col-md-10">
+			<table class="table">
+				<thead>
+				<tr style="color:#ffffff">
+					<td>Id</td>
+					<td>
+						@Html.ActionLink((@Html.DisplayNameFor(model => model.Description)), "Index", new { sortOrder = ViewBag.DiscriptionSortParam })
+					</td>
+					<td>Weight</td>
+					<td>@Html.ActionLink((@Html.DisplayNameFor(model => model.Volume)), "Index", new { sortOrder = ViewBag.VolumeSortParam })</td>
+					<td>Image</td>
+					<td>Manage</td>
+				</tr>
+				</thead>
+				<tbody>
+				@foreach (var item in Model)
+				{
+					<tr style="color:#ffffff">
+						<td>@item.Id</td>
+						<td>@item.Description</td>
+						<td>@item.Weight</td>
+						<td>@item.Volume</td>
+						<td> <img src="data:image;base64,@System.Convert.ToBase64String(@item.Image)" width="80" height="80"/></td>
+						<td>
+							<div class=" col-md-10">
+								@Html.ActionLink("Edit", "Edit")
+							</div>
+							<div class=" col-md-10">
+								@Html.ActionLink("Delete", "Delete")
+							</div>
+						</td>
+					</tr>
+				}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<section class="overlay-menu">
+	@await Html.PartialAsync("_Menu")
+</section>
+
+<footer style="position:absolute">
+	    @await Html.PartialAsync("_Footer")
+    </footer>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="/js/vendor/bootstrap.min.js"></script>
+
+    <script src="/js/plugins.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>

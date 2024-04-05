@@ -8,14 +8,10 @@ using System.Threading.Tasks;
 
 namespace Core.Models
 {
-    public class Freight
+    public class Freight : BaseModel
     {
-        [Required]
-        [Key]
-        public int Freight_Id { get; set; }
-
-        public int Cargo_Id { get; set; }
-        public int Route_Id { get; set; }
+        public Guid Cargo_Id { get; set; }
+        public Guid Route_Id { get; set; }
         public System.DateTime SendDate { get; set; }
         public System.DateTime ArriveDate { get; set; }
     }

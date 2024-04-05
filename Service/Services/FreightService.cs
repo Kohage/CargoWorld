@@ -20,11 +20,11 @@ namespace Service.Services
         {
             return await _FreightRepo.SaveAsync(freightModel);
         }
-        public IEnumerable<Freight> GetAllFreight()
+		public IEnumerable<Freight> GetAllFreight()
         {
             return _FreightRepo.GetAll();
         }
-        public Freight GetFreight(int id)
+        public Task<Freight> GetFreight(Guid id)
         {
             return _FreightRepo.GetById(id);
         }

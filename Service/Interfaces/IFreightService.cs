@@ -11,6 +11,6 @@ namespace Service.Interfaces
     {
         Task<Freight> SaveFreightAsync(Freight freightModel);
         IEnumerable<Freight> GetAllFreight();
-        Freight GetFreight(int id);
+        Task<Freight> GetFreight(Guid id);
     }
 }

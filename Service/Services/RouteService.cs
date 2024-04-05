@@ -24,9 +24,9 @@ namespace Service.Services
         {
             return _RouteRepo.GetAll();
         }
-        public Route GetRoute(int id)
+        public async Task<Route> GetRoute(Guid id)
         {
-            return _RouteRepo.GetById(id);
+            return await _RouteRepo.GetById(id);
         }
     }
 }

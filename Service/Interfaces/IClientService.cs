@@ -9,8 +9,8 @@ namespace Service.Interfaces
 {
     public interface IClientService
     {
-        Task<Client> SaveClientAsync(Client clientModel);
-        IEnumerable<Client> GetAllClient();
-        Client GetClient(int id);
+        Task<AppUser> SaveClientAsync(AppUser clientModel);
+        IEnumerable<AppUser> GetAllClient();
+        Task<AppUser> GetClient(Guid id);
     }
 }

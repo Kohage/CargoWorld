@@ -6,6 +6,6 @@ namespace Service.Interfaces
     {
         Task<Transport> SaveTransportAsync(Transport transportModel);
         IEnumerable<Transport> GetAllTransport();
-        Transport GetTransport(int id);
+        Task<Transport> GetTransport(Guid id);
     }
 }

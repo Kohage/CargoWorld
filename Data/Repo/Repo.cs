@@ -26,12 +26,12 @@ namespace Data.Repo
 
             public IEnumerable<T> GetAll()
             {
-                return _dbSet.AsEnumerable();
+                return  _dbSet.AsEnumerable();
             }
 
-            public T GetById(int id)
+            public async Task<T> GetById(Guid id)
             {
-                return _dbSet.Find(id);
+                return await _dbSet.FindAsync(id);
             }
         }
 }
